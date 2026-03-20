@@ -16,7 +16,14 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content/content.js"],
+      "js": [
+        "content/components/SelectionOverlay.js",
+        "content/components/CommentCard.js",
+        "content/components/FeedbackMarker.js",
+        "content/components/FloatingButton.js",
+        "content/components/SidePanel.js",
+        "content/content.js"
+      ],
       "css": ["content/content.css"],
       "run_at": "document_idle"
     }

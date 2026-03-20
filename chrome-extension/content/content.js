@@ -46,39 +46,8 @@
   container.id = 'vf-container';
   shadow.appendChild(container);
 
-  // ── Load Components ────────────────────────────────────────
-  // Components are injected via content_scripts or loaded dynamically.
-  // We load them by injecting script tags (they set on window.*).
-
-  const componentScripts = [
-    'content/components/SelectionOverlay.js',
-    'content/components/CommentCard.js',
-    'content/components/FeedbackMarker.js',
-    'content/components/FloatingButton.js',
-    'content/components/SidePanel.js',
-  ];
-
-  let componentsLoaded = 0;
-  const totalComponents = componentScripts.length;
-
-  function loadComponent(src) {
-    return new Promise((resolve) => {
-      const script = document.createElement('script');
-      script.src = chrome.runtime.getURL(src);
-      script.onload = () => {
-        componentsLoaded++;
-        resolve();
-      };
-      script.onerror = () => {
-        console.warn('[VF] Failed to load component:', src);
-        componentsLoaded++;
-        resolve();
-      };
-      document.head.appendChild(script);
-    });
-  }
-
   // ── Component instances ────────────────────────────────────
+  // Components are loaded via manifest content_scripts (same isolated world)
   let floatingButton = null;
   let selectionOverlay = null;
   let commentCard = null;
@@ -314,17 +283,8 @@
 
   // ── Initialize components ──────────────────────────────────
 
-  async function initComponents() {
-    await Promise.all(componentScripts.map(loadComponent));
-
-    // Try loading html2canvas
-    try {
-      const script = document.createElement('script');
-      script.src = chrome.runtime.getURL('lib/html2canvas.min.js');
-      document.head.appendChild(script);
-    } catch { /* optional */ }
-
-    // Initialize each component
+  function initComponents() {
+    // Initialize each component (already loaded via manifest content_scripts)
     if (window.VFFloatingButton) {
       floatingButton = new window.VFFloatingButton(shadow, {
         onNewFeedback: startSelection,
