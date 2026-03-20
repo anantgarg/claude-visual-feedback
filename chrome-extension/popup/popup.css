@@ -1,0 +1,326 @@
+/* ============================================================
+   Visual Feedback — Popup Styles
+   ============================================================ */
+
+:root {
+  --vf-bg-primary: #ffffff;
+  --vf-bg-secondary: #f9f8f8;
+  --vf-bg-tertiary: #f3f2f1;
+  --vf-text-primary: #171717;
+  --vf-text-secondary: #6b6b6b;
+  --vf-text-tertiary: #9b9b9b;
+  --vf-border: #e8e8e8;
+  --vf-border-hover: #d4d4d4;
+  --vf-accent: #5e6ad2;
+  --vf-accent-hover: #4f5bc0;
+  --vf-accent-light: #e8e9f8;
+  --vf-success: #2da44e;
+  --vf-success-light: #dafbe1;
+  --vf-warning: #f59e0b;
+  --vf-warning-light: #fef3c7;
+  --vf-error: #e5534b;
+  --vf-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vf-radius-sm: 4px;
+  --vf-radius-md: 6px;
+  --vf-radius-lg: 8px;
+  --vf-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--vf-font-family);
+  font-size: 13px;
+  color: var(--vf-text-primary);
+  background: var(--vf-bg-primary);
+  width: 360px;
+  max-height: 500px;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--vf-border);
+}
+
+.popup-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--vf-text-primary);
+}
+
+.popup-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--vf-text-secondary);
+}
+
+/* ── Status dot ───────────────────────────────────────────── */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot--connected {
+  background: var(--vf-success);
+}
+
+.status-dot--disconnected {
+  background: var(--vf-error);
+}
+
+/* ── Sections ─────────────────────────────────────────────── */
+
+.popup-section {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--vf-border);
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--vf-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* ── Server picker ────────────────────────────────────────── */
+
+.server-picker {
+  margin-bottom: 8px;
+}
+
+.server-select {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--vf-border);
+  border-radius: var(--vf-radius-md);
+  font-family: var(--vf-font-family);
+  font-size: 12px;
+  color: var(--vf-text-primary);
+  background: var(--vf-bg-primary);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.server-select:focus {
+  border-color: var(--vf-accent);
+}
+
+/* ── Port row ─────────────────────────────────────────────── */
+
+.port-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.port-input {
+  flex: 1;
+  padding: 7px 10px;
+  border: 1px solid var(--vf-border);
+  border-radius: var(--vf-radius-md);
+  font-family: var(--vf-font-family);
+  font-size: 12px;
+  color: var(--vf-text-primary);
+  background: var(--vf-bg-primary);
+  outline: none;
+  transition: border-color 150ms ease;
+  -moz-appearance: textfield;
+}
+
+.port-input::-webkit-outer-spin-button,
+.port-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.port-input:focus {
+  border-color: var(--vf-accent);
+}
+
+.server-message {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--vf-text-tertiary);
+  min-height: 16px;
+}
+
+.server-message--error {
+  color: var(--vf-error);
+}
+
+.server-message--success {
+  color: var(--vf-success);
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+
+.btn {
+  padding: 7px 14px;
+  border-radius: var(--vf-radius-md);
+  font-family: var(--vf-font-family);
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn--accent {
+  background: var(--vf-accent);
+  color: #fff;
+}
+
+.btn--accent:hover {
+  background: var(--vf-accent-hover);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--vf-text-secondary);
+  padding: 7px 8px;
+}
+
+.btn--ghost:hover {
+  background: var(--vf-bg-tertiary);
+}
+
+.btn--link {
+  background: none;
+  border: none;
+  color: var(--vf-accent);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn--link:hover {
+  text-decoration: underline;
+}
+
+/* ── Status pills ─────────────────────────────────────────── */
+
+.status-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.pill--open {
+  background: var(--vf-accent-light);
+  color: var(--vf-accent);
+}
+
+.pill--in-progress {
+  background: var(--vf-warning-light);
+  color: var(--vf-warning);
+}
+
+.pill--resolved {
+  background: var(--vf-success-light);
+  color: var(--vf-success);
+}
+
+/* ── Recent list ──────────────────────────────────────────── */
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.recent-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--vf-radius-md);
+  cursor: default;
+  transition: background 150ms ease;
+}
+
+.recent-item:hover {
+  background: var(--vf-bg-secondary);
+}
+
+.recent-item .status-dot {
+  margin-top: 4px;
+}
+
+.recent-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.recent-comment {
+  font-size: 12px;
+  color: var(--vf-text-primary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recent-meta {
+  font-size: 10px;
+  color: var(--vf-text-tertiary);
+  margin-top: 2px;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+
+.popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-top: 1px solid var(--vf-border);
+}
+
+/* ── Empty state ──────────────────────────────────────────── */
+
+.empty-state {
+  padding: 16px 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--vf-text-tertiary);
+}

@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Visual Feedback for Claude Code",
+  "version": "1.0.0",
+  "description": "Leave visual feedback on any website — Claude Code picks it up and fixes your code automatically.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["http://localhost/*", "http://127.0.0.1/*"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-feedback": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Toggle feedback mode"
+    },
+    "toggle-panel": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Toggle feedback panel"
+    }
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "lib/html2canvas.min.js",
+        "styles/linear-theme.css",
+        "content/content.css",
+        "content/components/SelectionOverlay.js",
+        "content/components/CommentCard.js",
+        "content/components/FeedbackMarker.js",
+        "content/components/FloatingButton.js",
+        "content/components/SidePanel.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

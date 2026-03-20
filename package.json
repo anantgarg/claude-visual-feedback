@@ -1,0 +1,12 @@
+{
+  "name": "claude-visual-feedback",
+  "version": "1.0.0",
+  "description": "Visual feedback system for Claude Code — select elements, leave comments, Claude fixes your code",
+  "private": true,
+  "author": "Anant Garg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anantgarg/claude-visual-feedback"
+  }
+}

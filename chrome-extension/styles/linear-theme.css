@@ -1,0 +1,71 @@
+:host {
+  --vf-bg-primary: #ffffff;
+  --vf-bg-secondary: #f9f8f8;
+  --vf-bg-tertiary: #f3f2f1;
+  --vf-text-primary: #171717;
+  --vf-text-secondary: #6b6b6b;
+  --vf-text-tertiary: #9b9b9b;
+  --vf-border: #e8e8e8;
+  --vf-border-hover: #d4d4d4;
+  --vf-accent: #5e6ad2;
+  --vf-accent-hover: #4f5bc0;
+  --vf-accent-light: #e8e9f8;
+  --vf-success: #2da44e;
+  --vf-success-light: #dafbe1;
+  --vf-warning: #f59e0b;
+  --vf-warning-light: #fef3c7;
+  --vf-error: #e5534b;
+  --vf-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vf-font-size-xs: 11px;
+  --vf-font-size-sm: 12px;
+  --vf-font-size-base: 13px;
+  --vf-font-size-md: 14px;
+  --vf-font-size-lg: 16px;
+  --vf-radius-sm: 4px;
+  --vf-radius-md: 6px;
+  --vf-radius-lg: 8px;
+  --vf-radius-xl: 12px;
+  --vf-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --vf-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --vf-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --vf-shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --vf-transition: 150ms ease;
+}
+
+/* Base styles for shadow DOM host */
+:host {
+  all: initial;
+  font-family: var(--vf-font-family);
+  font-size: var(--vf-font-size-base);
+  color: var(--vf-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:host *,
+:host *::before,
+:host *::after {
+  box-sizing: border-box;
+}
+
+:host button {
+  font-family: var(--vf-font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+:host input,
+:host textarea {
+  font-family: var(--vf-font-family);
+  font-size: var(--vf-font-size-base);
+  color: var(--vf-text-primary);
+  outline: none;
+}
+
+:host textarea {
+  resize: vertical;
+}

@@ -1,0 +1,35 @@
+Visual Feedback for Claude Code
+
+See a bug? Click it. Comment on it. Claude fixes it.
+
+Leave Linear-style visual feedback on any website — select an element, write a comment, and Claude Code automatically picks it up, reads the screenshot, finds the code, and fixes it. No context switching. No copy-pasting error descriptions.
+
+HOW IT WORKS:
+1. Click the floating feedback button on any page (or press Cmd+Shift+F)
+2. Select an element or drag to select an area
+3. Write your feedback comment
+4. Claude Code picks up the feedback and fixes the code automatically
+
+FEATURES:
+- Element selection: hover to highlight, click to select any element on the page
+- Area selection: drag to select any rectangular area
+- Screenshot capture: automatic screenshot of the selected area
+- Linear-style UI: clean, minimal comment cards with threaded replies
+- Side panel: view all feedback for a page or project
+- Real-time status: see when Claude picks up your feedback and marks it resolved
+- Multi-project support: works across multiple projects simultaneously
+- Keyboard shortcuts: Cmd+Shift+F to give feedback, Cmd+Shift+L to view all
+
+PRIVACY:
+- All data stays on your local machine
+- Communicates only with localhost
+- No external servers, analytics, or tracking
+- Screenshots stored locally in your project
+
+SETUP:
+1. Install this extension
+2. In your project, run: npx claude-feedback-skills
+3. In Claude Code, run: /feedback-init
+4. Start leaving feedback on your dev site
+
+Works with any website running on localhost or any URL. Designed for developers using Claude Code.

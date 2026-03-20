@@ -1,0 +1,21 @@
+{
+  "name": "claude-visual-feedback",
+  "version": "1.0.0",
+  "description": "Install visual feedback skills for Claude Code — leave comments on any website, Claude fixes your code automatically",
+  "bin": {
+    "claude-visual-feedback": "./bin/install.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "feedback",
+    "visual-feedback",
+    "chrome-extension"
+  ],
+  "author": "Anant Garg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anantgarg/claude-visual-feedback"
+  }
+}

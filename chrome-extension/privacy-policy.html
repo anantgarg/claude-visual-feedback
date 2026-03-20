@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Visual Feedback for Claude Code</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #171717; line-height: 1.6; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 18px; margin-top: 32px; }
+    p { margin: 12px 0; }
+    .date { color: #6b6b6b; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <p class="date">Last updated: March 20, 2026</p>
+
+  <h2>Overview</h2>
+  <p>Visual Feedback for Claude Code is a Chrome extension that enables developers to leave visual feedback on websites. All data stays on your local machine.</p>
+
+  <h2>Data Collection</h2>
+  <p>This extension does <strong>not</strong> collect, transmit, or store any personal data on external servers. Specifically:</p>
+  <ul>
+    <li>No data is sent to any third-party servers</li>
+    <li>No analytics or telemetry is collected</li>
+    <li>No cookies are set by the extension</li>
+    <li>No user accounts or authentication are required</li>
+  </ul>
+
+  <h2>Local Communication</h2>
+  <p>The extension communicates exclusively with a local server running on your machine (localhost/127.0.0.1). This server is started by you within your development environment. The communication includes:</p>
+  <ul>
+    <li>Feedback comments you write</li>
+    <li>Screenshots of selected page areas</li>
+    <li>CSS selectors and coordinates of selected elements</li>
+    <li>Page URLs you provide feedback on</li>
+  </ul>
+  <p>All of this data is stored as files on your local filesystem, in your project directory.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong>activeTab:</strong> Used to interact with the current page for element selection and screenshot capture</li>
+    <li><strong>storage:</strong> Used to remember your preferences (server connection, author name) locally in Chrome</li>
+    <li><strong>scripting:</strong> Used to inject the feedback UI into web pages</li>
+    <li><strong>host_permissions (localhost):</strong> Used to communicate with the local feedback server only</li>
+  </ul>
+
+  <h2>Screenshots</h2>
+  <p>Screenshots are captured only when you explicitly select an element and submit feedback. They are stored locally on your machine and are never transmitted externally.</p>
+
+  <h2>Contact</h2>
+  <p>For questions about this privacy policy, open an issue on the project's GitHub repository.</p>
+</body>
+</html>

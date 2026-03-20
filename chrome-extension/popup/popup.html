@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Feedback</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="popup-title">Visual Feedback</div>
+      <div class="popup-status" id="connectionStatus">
+        <span class="status-dot status-dot--disconnected" id="statusDot"></span>
+        <span class="status-label" id="statusLabel">Not connected</span>
+      </div>
+    </div>
+
+    <!-- Server Connection -->
+    <div class="popup-section" id="serverSection">
+      <div class="section-title">Server</div>
+
+      <!-- Server picker (hidden if 0-1 servers) -->
+      <div class="server-picker" id="serverPicker" style="display:none;">
+        <select id="serverSelect" class="server-select"></select>
+      </div>
+
+      <!-- Manual port entry -->
+      <div class="port-row">
+        <input type="number" id="portInput" class="port-input" placeholder="Port (e.g. 3777)" min="1" max="65535" />
+        <button id="connectBtn" class="btn btn--accent">Connect</button>
+        <button id="refreshBtn" class="btn btn--ghost" title="Refresh servers">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/>
+            <polyline points="1 20 1 14 7 14"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="server-message" id="serverMessage"></div>
+    </div>
+
+    <!-- Feedback Summary -->
+    <div class="popup-section" id="summarySection" style="display:none;">
+      <div class="section-title">Summary</div>
+      <div class="status-pills">
+        <span class="pill pill--open" id="openCount">0 Open</span>
+        <span class="pill pill--in-progress" id="inProgressCount">0 In Progress</span>
+        <span class="pill pill--resolved" id="resolvedCount">0 Resolved</span>
+      </div>
+    </div>
+
+    <!-- Recent Feedback -->
+    <div class="popup-section" id="recentSection" style="display:none;">
+      <div class="section-title">Recent</div>
+      <div class="recent-list" id="recentList"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <button id="openPanelBtn" class="btn btn--link">Open in page</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

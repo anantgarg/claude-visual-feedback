@@ -1,0 +1,6 @@
+node_modules/
+feedback/
+.claude/feedback-server/node_modules/
+*.log
+.DS_Store
+.claude/settings.local.json
